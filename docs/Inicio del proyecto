@@ -20,3 +20,9 @@ y defino las constantes de la base de datos
 		USER: 'DB_USER',
 		PASS: 'DB_PASSWORD',
 	  }
+
+		Instalo las dependencias necesarias para validación y crear la API's 
+				npm i --save class-validator class-transformer 		// Validaciones
+				npm i --save @nestjs/swagger swagger-ui-express 	// open API
+
+				
