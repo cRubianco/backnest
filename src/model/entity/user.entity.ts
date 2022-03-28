@@ -1,24 +1,25 @@
+import { ApiProperty } from "@nestjs/swagger";
 import { Column, Entity } from "typeorm";
 import { BaseEntity } from "./base.entity";
 
 @Entity('users')
 export class UserEntity extends BaseEntity {
 
-  @Column({ length: 50 })
-  @ApiModelPropertyOptional()
+  @Column({ length: 30 })
+  @ApiProperty()
   readonly name: string;
 
   @Column({ length: 50 })
-  @ApiModelProperty()
-  readonly age: number;
+  @ApiProperty()
+  readonly mail: string;
   
-  @Column({ length: 50 })
-  @ApiModelProperty()
-  readonly favouriteColor: string;
+  @Column({ length: 20 })
+  @ApiProperty()
+  readonly password: string;
   
-  constructor(o: Object) {
-    super();
-    Object.assign(this, o);
-  }
+  // constructor(o: Object) {
+  //   super();
+  //   Object.assign(this, o);
+  // }
 
 }
