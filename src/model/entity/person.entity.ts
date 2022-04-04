@@ -17,11 +17,11 @@ export class PersonEntity extends BaseEntity {
   @ApiProperty()
   readonly documentType: string;
   
-  @Column({ length: 20 })
+  @Column()
   @ApiProperty()
   readonly docNumeb: number;
   
-  @Column({ length: 20 })
+  @Column()
   @ApiProperty()
   readonly cuil: number;
   
@@ -37,7 +37,7 @@ export class PersonEntity extends BaseEntity {
   @ApiProperty()
   readonly nationality: string;
 
-  @Column({ name: "gender", type: 'enum', enum: ['C', 'D' ,'S', 'V' ] })
+  @Column({ name: "maritalStatus", type: 'enum', enum: ['C', 'D' ,'S', 'V' ] })
   @ApiProperty()
   readonly maritalStatus: string;
   
