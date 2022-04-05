@@ -22,7 +22,7 @@
 
 ## Description
 
-Backen basado en [Nest](https://github.com/nestjs/nest)
+Backend base basado en [Nest](https://github.com/nestjs/nest)
 
 ## Installation
 
