@@ -5,27 +5,27 @@ import { BaseEntity } from "./base.entity";
 @Entity('person')
 export class PersonEntity extends BaseEntity {
 
-  @Column({ length: 30 })
+  @Column({ name: "name", length: 30 })
   @ApiProperty()
   readonly name: string;
 
-  @Column({ length: 30 })
+  @Column({ name: "surname", length: 30 })
   @ApiProperty()
   readonly surname: string;
   
-  @Column({ length: 20 })
+  @Column({ name: "documentTYpe", length: 20 })
   @ApiProperty()
   readonly documentType: string;
   
-  @Column({ length: 20 })
+  @Column({ name: "document", type: "int" })
   @ApiProperty()
   readonly docNumeb: number;
   
-  @Column({ length: 20 })
+  @Column({ name: "cuil" })
   @ApiProperty()
-  readonly cuil: number;
+  readonly cuil: string;
   
-  @Column()
+  @Column({ name: "birthday" })
   @ApiProperty()
   readonly birthday: Date;
 
@@ -33,11 +33,11 @@ export class PersonEntity extends BaseEntity {
   @ApiProperty()
   readonly gender: string;
 
-  @Column({ length: 20 })
+  @Column({ name: "nationality", length: 20 })
   @ApiProperty()
   readonly nationality: string;
 
-  @Column({ name: "gender", type: 'enum', enum: ['C', 'D' ,'S', 'V' ] })
+  @Column({ name: "maritalSatus", type: 'enum', enum: ['C', 'D' ,'S', 'V' ] })
   @ApiProperty()
   readonly maritalStatus: string;
   
@@ -45,9 +45,9 @@ export class PersonEntity extends BaseEntity {
   // @ApiProperty()
   // readonly password: string;
   
-  // constructor(o: Object) {
-  //   super();
-  //   Object.assign(this, o);
-  // }
+  constructor(o: Object) {
+    super();
+    Object.assign(this, o);
+  }
 
 }

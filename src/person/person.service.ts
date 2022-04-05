@@ -11,6 +11,7 @@ export class PersonService extends BaseService<PersonEntity> {
     @InjectRepository(PersonEntity)
     private readonly personsRepository: Repository<PersonEntity>
   ) {
+        console.log('service persons');
     super(personsRepository);
   }
   

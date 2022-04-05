@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { Constants } from './utils/constants';
 import { UsersModule } from './modules/users/users.module';
 import { PersonModule } from './person/person.module';
+import { BaseModule } from './modules/base/base.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
@@ -26,6 +27,7 @@ import { PersonModule } from './person/person.module';
     }),
     inject:[ConfigService],
   }),
+  BaseModule,
   UsersModule,
   PersonModule
 ],

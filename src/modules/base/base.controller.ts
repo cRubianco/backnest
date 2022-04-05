@@ -5,7 +5,7 @@ import { IBaseService } from './iBase.service';
 
 export class BaseController<T extends BaseEntity> {
 
-  constructor(private readonly iBaseService: IBaseService<T>){}
+  constructor ( private readonly iBaseService: IBaseService<T> ) {}
 
   @Get()
   @ApiResponse({status: 200, description: 'Ok'})
