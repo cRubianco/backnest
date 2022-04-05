@@ -9,8 +9,7 @@
 <p align="center">
   <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
   <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-  <a href="https://paypal.me/cRubianco" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    
+  <a href="https://paypal.me/cRubianco" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>  
   <a href="https://twitter.com/rubiancocarlos" target="_blank"><img src="https://img.shields.io/twitter/follow/rubiancocarlos.svg?style=social&label=Follow"></a>
 </p>
 
@@ -52,7 +51,7 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- Author - [Carlos Rubianco]
+- Author - Carlos Rubianco
 - Twitter - [@rubiancocarlos](https://twitter.com/rubiancocarlos)
 
 ## License
