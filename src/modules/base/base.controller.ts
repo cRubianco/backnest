@@ -13,7 +13,7 @@ export class BaseController<T extends BaseEntity> {
     return this.iBaseService.getAll();
   }
   
-  @Get('id')
+  @Get(':id')
   @ApiResponse({status: 200, description: 'Entity retrieved successfully'})
   @ApiResponse({status: 404, description: 'Entity does not exist'})
   async findById(@Param('id') id: number): Promise<T> {
