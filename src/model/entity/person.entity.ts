@@ -1,4 +1,4 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty, ApiQuery } from "@nestjs/swagger";
 import { Column, Entity } from "typeorm";
 import { BaseEntity } from "./base.entity";
 
@@ -19,17 +19,17 @@ export class PersonEntity extends BaseEntity {
   
   @Column()
   @ApiProperty()
-  readonly docNumeb: number;
+  readonly documentNumber: number;
   
   @Column()
   @ApiProperty()
-  readonly cuil: number;
+  readonly cuil: string;
   
   @Column()
   @ApiProperty()
   readonly birthday: Date;
 
-  @Column({ name: "gender", type: 'enum', enum: ['F', 'M', ] })
+  @Column()
   @ApiProperty()
   readonly gender: string;
 

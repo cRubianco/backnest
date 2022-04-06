@@ -17,9 +17,9 @@ export class UserEntity extends BaseEntity {
   @ApiProperty()
   readonly password: string;
   
-  // constructor(o: Object) {
-  //   super();
-  //   Object.assign(this, o);
-  // }
+  constructor(o: Object) {
+    super();
+    Object.assign(this, o);
+  }
 
 }

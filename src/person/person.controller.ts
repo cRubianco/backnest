@@ -6,9 +6,7 @@ import { PersonService } from './person.service';
 @Controller('persons')
 export class PersonController extends BaseController<PersonEntity> {
   
-  constructor (
-    private readonly personService: PersonService 
-  ) {
+  constructor ( private readonly personService: PersonService ) {
     super(personService)
   }
 
