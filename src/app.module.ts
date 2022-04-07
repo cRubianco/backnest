@@ -22,7 +22,7 @@ import { PersonModule } from './person/person.module';
       password: configService.get<string>(Constants.DB.PASS),
       entities:[__dirname + '/**/*.entity.{ts,js}'],
       synchronize: true,
-      logging: false,
+      logging: true,
     }),
     inject:[ConfigService],
   }),
