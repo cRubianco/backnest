@@ -29,11 +29,21 @@ export class BaseController<T extends BaseEntity> {
   }
 
 
-  @Put()
+  @Put(':id')
   @ApiResponse({ status: 400, description: 'Bad Request.'})
-	@ApiResponse({ status: 200, description: 'Entity deleted successfully.'})
-	async update(@Body() entity: T): Promise<T> {
-	  return this.iBaseService.update(entity);
+	@ApiResponse({ status: 200, description: 'Entity updated successfully.'})
+	async update(@Param('id') id: number, @Body() entity: T): Promise<T> {
+    const generic = await this.iBaseService.getById(id);
+    console.log("Hola Generic",generic);
+    console.log("Hola entity",entity);
+    
+    if(generic === null || undefined) {
+      console.log('Generic false -> ', generic);
+      return null;
+    } else {
+      console.log('Generic true -> ', generic);
+      return this.iBaseService.update(entity);
+    }
 	}
 
   @Delete('id')

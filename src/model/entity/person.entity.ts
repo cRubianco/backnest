@@ -25,7 +25,7 @@ export class PersonEntity extends BaseEntity {
   @ApiProperty()
   readonly cuil: number;
   
-  @Column()
+  @Column({ type: 'date' })
   @ApiProperty()
   readonly birthday: Date;
 

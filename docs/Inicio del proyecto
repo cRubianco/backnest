@@ -21,8 +21,18 @@ y defino las constantes de la base de datos
 		PASS: 'DB_PASSWORD',
 	  }
 
-		Instalo las dependencias necesarias para validación y crear la API's 
-				npm i --save class-validator class-transformer 		// Validaciones
-				npm i --save @nestjs/swagger swagger-ui-express 	// open API
+		Instalo las dependencias necesarias
+			npm i --save @nestjs/common  mysql2 reflect-metadata rimraf rxjs
+			npm i --save @nestjs/typeorm typeorm @nestjs/platform-express
 
+			npm i --save class-validator class-transformer 		// Validaciones
+			
+			npm i --save @nestjs/swagger swagger-ui-express 	// open API
+		
+		Instalo las dependencias de desarrollo 
+			npm i -D @nestjs/cli @nestjs/schematics @nestjs/testing @types/express @types/jest @types/node
+			npm i -D @types/supertest @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint
+			npm i -D eslint-config-prettier eslint-plugin-prettier jest prettier source-map-support supertest
+			npm i -D ts-jest ts-loader ts-node tsconfig-paths typescript
+			npm i -D @nestjs/config @nestjs/typeorm
 				
