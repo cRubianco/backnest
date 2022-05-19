@@ -34,15 +34,13 @@ export class BaseController<T extends BaseEntity> {
 	@ApiResponse({ status: 200, description: 'Entity updated successfully.'})
 	async update(@Param('id') id: number, @Body() entity: T): Promise<T> {
     const generic = await this.iBaseService.getById(id);
-    console.log("Hola Generic",generic);
-    console.log("Hola entity",entity);
-    
     if(generic === null || undefined) {
       console.log('Generic false -> ', generic);
       return null;
     } else {
-      console.log('Generic true -> ', generic);
-      return this.iBaseService.update(entity);
+      const personUpdated = await this.iBaseService.update(entity);
+      console.log('Generic true -> ', personUpdated);
+      return personUpdated;
     }
 	}
 
