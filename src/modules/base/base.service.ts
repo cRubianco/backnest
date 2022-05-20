@@ -22,7 +22,7 @@ export class BaseService<T extends BaseEntity> implements IBaseService<T> {
     } catch (error) {
       throw new BadGatewayException(error);
     }
-      return <Promise<T>>this.genericRepository.findOneById(id);  
+      return <Promise<T>>this.genericRepository.findOne(id);  
   }
   
   create(entity: any): Promise<number>{
@@ -41,7 +41,7 @@ export class BaseService<T extends BaseEntity> implements IBaseService<T> {
   update(entity: any): Promise<any>{
     try {
       return new Promise<any> ((resolve, reject) => {
-        this.genericRepository.findOneBy(entity.id)
+        this.genericRepository.findOne(entity.id)
         .then(responseGet => {
           try {
             if (responseGet == null) reject('Not existing')

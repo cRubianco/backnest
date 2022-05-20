@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PersonEntity } from 'src/model/entity/person.entity';
 import { BaseService } from 'src/modules/base/base.service';
@@ -9,9 +9,17 @@ export class PersonService extends BaseService<PersonEntity> {
   
   constructor(
     @InjectRepository(PersonEntity)
-    private readonly personsRepository: Repository<PersonEntity>
+    private readonly personRepository: Repository<PersonEntity>
   ) {
-    super(personsRepository);
+    super(personRepository);
+  }
+  
+  async getAll(): Promise<PersonEntity[]> {
+    const listPersons = await this.personRepository.find();
+    if (!listPersons) {
+      throw new NotFoundException({message: "La lista esta vacia o no existe"});      
+    }
+    return listPersons;
   }
   
 }
