@@ -31,15 +31,17 @@ export class BaseController<T extends BaseEntity> {
 
   @Put(':id')
   @ApiResponse({ status: 400, description: 'Bad Request.'})
-	@ApiResponse({ status: 200, description: 'Entity updated successfully.'})
-	async update(@Param('id') id: number, @Body() entity: T): Promise<T> {
-    const generic = await this.iBaseService.getById(id);
-    if(generic === null || undefined) {
-      console.log('Generic false -> ', generic);
+	@ApiResponse({ status: 200, description: 'Person updated successfully.'})
+	async update(@Body() person: T, @Param('id') id: number): Promise<T> {
+    const personToUpdate = await this.iBaseService.getById(id);
+    if(personToUpdate === null || undefined) {
       return null;
     } else {
-      const personUpdated = await this.iBaseService.update(entity);
-      console.log('Generic true -> ', personUpdated);
+      console.log("persona del parammetro", person);
+      
+      const personUpdated = await this.iBaseService.update(personToUpdate.id, person);
+      console.log('personToUpdated true -> ', personToUpdate);
+      console.log('personUpdated  -> ', personUpdated);
       return personUpdated;
     }
 	}
