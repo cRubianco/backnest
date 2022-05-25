@@ -33,14 +33,14 @@ export class BaseController<T extends BaseEntity> {
   @ApiResponse({ status: 400, description: 'Bad Request.'})
 	@ApiResponse({ status: 200, description: 'Entity deleted successfully.'})
 	async update(@Param('id') id: number, @Body() entity: T): Promise<T> {
-    console.log('Body ----> ', entity);
+    console.log('BaseController - Body ----> ', entity);
     
     const generic = await this.iBaseService.getById(id);
     if (!generic || undefined) {
       return null;
     } else {
-      console.log('id -----> ', generic);
-      console.log('entity ----> ', entity);
+      console.log('BaseController - id -----> ', generic);
+      console.log('BaseController - entity ----> ', entity);
       
       return await this.iBaseService.update(entity);
     }

@@ -16,13 +16,11 @@ export class BaseService<T extends BaseEntity> implements IBaseService<T> {
   }
 
   getById(id: number): Promise<T> {
-    
-    
     try {
     } catch (error) {
       throw new BadGatewayException(error);
     }
-      return <Promise<T>>this.genericRepository.findOne(id);  
+      return <Promise<T>>this.genericRepository.findOneById(id);  
   }
   
   create(entity: any): Promise<number>{
