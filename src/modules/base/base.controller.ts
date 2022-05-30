@@ -39,9 +39,6 @@ export class BaseController<T extends BaseEntity> {
     if (!generic || undefined) {
       return null;
     } else {
-      console.log('id -----> ', generic);
-      console.log('entity ----> ', entity);
-      
       return await this.iBaseService.update(entity);
     }
 	}

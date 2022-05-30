@@ -16,8 +16,6 @@ export class BaseService<T extends BaseEntity> implements IBaseService<T> {
   }
 
   getById(id: number): Promise<T> {
-    
-    
     try {
     } catch (error) {
       throw new BadGatewayException(error);
@@ -41,6 +39,7 @@ export class BaseService<T extends BaseEntity> implements IBaseService<T> {
   update(entity: any): Promise<any>{
     try {
       return new Promise<any> ((resolve, reject) => {
+        console.log("baseService--> ",resolve);
         this.genericRepository.findOne(entity.id)
         .then(responseGet => {
           try {
