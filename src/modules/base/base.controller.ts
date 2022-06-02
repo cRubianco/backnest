@@ -13,7 +13,7 @@ export class BaseController<T extends BaseEntity> {
     return this.iBaseService.getAll();
   }
   
-  @Get('id')
+  @Get(':id')
   @ApiResponse({status: 200, description: 'Entity retrieved successfully'})
   @ApiResponse({status: 404, description: 'Entity does not exist'})
   async findById(@Param('id') id: number): Promise<T> {
@@ -29,14 +29,24 @@ export class BaseController<T extends BaseEntity> {
   }
 
 
-  @Put()
+  @Put(':id')
   @ApiResponse({ status: 400, description: 'Bad Request.'})
 	@ApiResponse({ status: 200, description: 'Entity deleted successfully.'})
-	async update(@Body() entity: T): Promise<T> {
-	  return this.iBaseService.update(entity);
+	async update(@Param('id') id: number, @Body() entity: T): Promise<T> {
+    console.log('BaseController - Body ----> ', entity);
+    
+    const generic = await this.iBaseService.getById(id);
+    if (!generic || undefined) {
+      return null;
+    } else {
+      console.log('BaseController - id -----> ', generic);
+      console.log('BaseController - entity ----> ', entity);
+      
+      return await this.iBaseService.update(entity);
+    }
 	}
 
-  @Delete('id')
+  @Delete(':id')
   @ApiResponse({ status: 200, description: 'Entity deleted successfully.'})
 	@ApiResponse({ status: 400, description: 'Bad Request.'})
 	async delete(@Param('id') id: number) {

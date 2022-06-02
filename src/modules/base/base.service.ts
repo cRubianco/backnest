@@ -1,6 +1,7 @@
-import { Repository } from 'typeorm';
+
 import { IBaseService } from '../base/IBase.service';
 import { BaseEntity } from 'src/model/entity/base.entity';
+import { Repository } from 'typeorm';
 import { BadGatewayException } from '@nestjs/common';
 
 export class BaseService<T extends BaseEntity> implements IBaseService<T> {
@@ -16,8 +17,6 @@ export class BaseService<T extends BaseEntity> implements IBaseService<T> {
   }
 
   getById(id: number): Promise<T> {
-    
-    
     try {
     } catch (error) {
       throw new BadGatewayException(error);
@@ -41,7 +40,7 @@ export class BaseService<T extends BaseEntity> implements IBaseService<T> {
   update(entity: any): Promise<any>{
     try {
       return new Promise<any> ((resolve, reject) => {
-        this.genericRepository.findOneBy(entity.id)
+        this.genericRepository.findOne(entity.id)
         .then(responseGet => {
           try {
             if (responseGet == null) reject('Not existing')
