@@ -1,7 +1,10 @@
 ### Paso a paso
 
 # nest --help
-
+  Instalo nestjs
+    npm i -g @nestjs/cli
+    npm i --save @nestjs/core @nestjs/common rxjs reflect-metadata
+    
 # Crear un modulo
   nest g mo nombre_del_modulo --no-spec
 
