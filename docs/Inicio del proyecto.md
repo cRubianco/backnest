@@ -1,6 +1,9 @@
 ### Creo el proyecto
     nest new project-name (nest new backend)
 
+### Instalo nestjs en forma global
+	npm i -g @nestjs/cli
+	
 ### Instalo la dependecnia @nestjs/config 
     npm i --save @nestjs/config
 

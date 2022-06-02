@@ -1,6 +1,7 @@
-import { Repository } from 'typeorm';
+
 import { IBaseService } from '../base/IBase.service';
 import { BaseEntity } from 'src/model/entity/base.entity';
+import { Repository } from 'typeorm';
 import { BadGatewayException } from '@nestjs/common';
 
 export class BaseService<T extends BaseEntity> implements IBaseService<T> {
